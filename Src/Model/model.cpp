@@ -383,7 +383,7 @@ VectorXi Model::calcAM
 
     VectorXi M = calcM(NDF,NNE,NE,NN,IFIX,EN);
 
-    for (int i = 0;i < ND - NFIX; i++)
+    for (int i = 0; i < ND - NFIX; i++)
     {
         AM[i] = 1;
         Height[i] = i - M[i] + 2;
@@ -446,7 +446,7 @@ MatrixXd Model::calcGK(int ET,int SM,int MI,double T)
 
     for (int i = 0; i < NE; i++)
     {
-        //单元刚度矩阵
+        // 单元刚度矩阵
         MatrixXd EK;
         for (int j = 0; j < NNE; j++)
             for (int k = 0; k < NDF; k++)
@@ -460,7 +460,7 @@ MatrixXd Model::calcGK(int ET,int SM,int MI,double T)
             TriangularElementSixNode element;
             EK = element.calcEK(coords,material,T);
         }
-        //组装总刚矩阵
+        // 组装总刚矩阵
         int row,column;
         for (int j = 0; j < NDF * NNE; j++)
         {
@@ -470,20 +470,18 @@ MatrixXd Model::calcGK(int ET,int SM,int MI,double T)
             for (int k = 0; k < NDF * NNE; k++)
             {
                 column = ID(EN(i,k/NDF),k % NDF) - 1;
-                if (column < 0)
-                    continue;
-                if (row > column)
+                if (column < 0 || row > column)
                     continue;
                 switch (SM)
                 {
-                case 0:
+                case 0:  // 方阵储存
                     GK(row,column) += EK(j,k); break;
-                case 1:
+                case 1:  // 一维等带宽储存
                 {
                     int rowIndex = AM(column) + column - row - 1;
                     GK(rowIndex) += EK(j,k); break;
                 }
-                case 2:
+                case 2:  // 二维变带宽储存
                     GK(row,column - row) += EK(j,k); break;
                 }
             }  //k loop
@@ -812,6 +810,8 @@ void Model::calcGravityLoad(int ET, MatrixXd CXY, MatrixXi EN,double Density,dou
         MatrixXd CI = CXY.block(EN(j,0),0,1,2);
         MatrixXd CJ = CXY.block(EN(j,1),0,1,2);
         MatrixXd CM = CXY.block(EN(j,2),0,1,2);
+        // Matrix3f C;
+        // C << 1, CI, 1, CJ, 1, CM;
         double S = 0;
         S += (CJ(0)*CM(1)-CM(0)*CJ(1));
         S -= (CI(0)*CM(1)-CM(0)*CI(1));
@@ -1129,26 +1129,6 @@ void Model::createVTKResultFile()
     //Calculate Strain & Stress
     calcStrainStress();
 
-/*
-    //VECTORS STRESS
-    resultData.append("\nVECTORS STRESS double\n");
-    for (int i = 0; i < NN; i++)
-    {
-        for (int j = 0; j < 3; j++)
-            resultData.append(QString::number(STRESS(i,j)) + QString(" "));
-        resultData.append("\n");
-    }
-
-    //VECTORS STRAIN
-    resultData.append("\nVECTORS STRESS double\n");
-    for (int i = 0; i < NN; i++)
-    {
-        for (int j = 0; j < 3; j++)
-            resultData.append(QString::number(STRAIN(i,j)) + QString(" "));
-        resultData.append("\n");
-    }
-*/
-
     //SCALARS STRESS-X
     resultData.append("\nSCALARS STRESS_X double 1\n");
     resultData.append("LOOKUP_TABLE default\n");
@@ -1203,6 +1183,11 @@ void Model::createVTKResultFile()
 
 VectorXd Model::solveSystem()
 {
+    //六节点三角形单元
+    if (ET == 6)
+        TrigularElement3To6();
+    calcBoundaryCondition();
+    calcLoad();
     VectorXd Delta;
     MatrixXd GK;
     int NDF = 2,NNE = 3;

@@ -20,8 +20,8 @@ public:
     MatrixXd CXY;                        //节点坐标
     MatrixXi SI;                         //边
 
-    std::vector<BC> BC; //边界条件数据
-    std::vector<LOAD> F;  //荷载数据
+    std::vector<BC> BC;                  //边界条件数据
+    std::vector<LOAD> F;                 //荷载数据
 
     int NH;                              //孔洞数量
     int NN;                              //节点数量

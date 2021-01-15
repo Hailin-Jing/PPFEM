@@ -479,10 +479,10 @@ void MainWindow::on_actionAnalyze_triggered()
         return;
     }
 
-    //int &PT, double &T, int &SM, int &SLE, int &PI, int &MI
-    int PT,ET,SM,SLE,PI,MI;
-    double T;
-    model->getJobArgument(PT,ET,T,SM,SLE,PI,MI);
+    // int &PT, double &T, int &SM, int &SLE, int &PI, int &MI
+    // int PT,ET,SM,SLE,PI,MI;
+    // double T;
+    // model->getJobArgument(PT,ET,T,SM,SLE,PI,MI);
 
 //    Part *part = model->getPart(PI);
 //    int maximum = 0;
@@ -503,12 +503,7 @@ void MainWindow::on_actionAnalyze_triggered()
 
 //    model->setProgressDialog(progress);
 
-    //六节点三角形单元
-    if (ET == 6)
-        model->TrigularElement3To6();
 
-    model->calcBoundaryCondition();
-    model->calcLoad();
 
 //    progress->setValue(progress->maximum());
     model->solveSystem();

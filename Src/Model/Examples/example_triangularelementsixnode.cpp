@@ -1,8 +1,8 @@
 #include <iostream>
 #include "Eigen3/Eigen/Dense"
-#include "../Element/myelement.h"
-#include "triangularelementthreenode.h"
-#include "triangularelementsixnode.h"
+#include "../Element/femelement.h"
+#include "tri3.h"
+#include "tri6.h"
 #include "model.h"
 using namespace Eigen;
 

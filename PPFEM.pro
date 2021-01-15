@@ -31,76 +31,76 @@ CONFIG+=precompile_header
 PRECOMPILED_HEADER = stable.h
 
 SOURCES += \
+    Src/Model/Element/TriangularElement/tri3.cpp \
+    Src/Model/Element/TriangularElement/tri6.cpp \
     main.cpp \
-    Src/Model/Element/TriangularElement/triangularelementsixnode.cpp \
-    Src/Model/Element/TriangularElement/triangularelementthreenode.cpp \
     Src/Model/Examples/example_triangularelementsixnode.cpp \
     Src/Model/Examples/example_triangularelementthreenode.cpp \
     Src/Model/Part/DXFFilter/dxffilter.cpp \
     Src/Model/Part/DXFFilter/primitives.cpp \
     Src/Model/model.cpp \
-    Src/QWChartView/qwchartview.cpp \
+    Src/View/QWChartView/qwchartview.cpp \
     Src/mainwindow.cpp \
-    Src/PartWindow/ModeData/modeldata.cpp \
-    Src/PartWindow/MeshParameter/meshparameter.cpp \
+    Src/View/PartWindow/ModeData/modeldata.cpp \
+    Src/View/PartWindow/MeshParameter/meshparameter.cpp \
     Src/Model/Material/material.cpp \
     Src/Model/Part/part.cpp \
-    Src/PartWindow/partwindow.cpp \
+    Src/View/PartWindow/partwindow.cpp \
     dxflib/src/dl_dxf.cpp \
     dxflib/src/dl_writer_ascii.cpp \
-    EasyMeshMaster/Src/draw_eps.cpp \
-    EasyMeshMaster/Src/easymesh.cpp \
-    EasyMeshMaster/Src/easymesh_area.cpp \
-    EasyMeshMaster/Src/easymesh_bowyer.cpp \
-    EasyMeshMaster/Src/easymesh_circles.cpp \
-    EasyMeshMaster/Src/easymesh_classify.cpp \
-    EasyMeshMaster/Src/easymesh_compress.cpp \
-    EasyMeshMaster/Src/easymesh_diamond.cpp \
-    EasyMeshMaster/Src/easymesh_draw.cpp \
-    EasyMeshMaster/Src/easymesh_erase.cpp \
-    EasyMeshMaster/Src/easymesh_examples.cpp \
-    EasyMeshMaster/Src/easymesh_help.cpp \
-    EasyMeshMaster/Src/easymesh_in_elem.cpp \
-    EasyMeshMaster/Src/easymesh_insert_node.cpp \
-    EasyMeshMaster/Src/easymesh_load.cpp \
-    EasyMeshMaster/Src/easymesh_materials.cpp \
-    EasyMeshMaster/Src/easymesh_neighbours.cpp \
-    EasyMeshMaster/Src/easymesh_new_node.cpp \
-    EasyMeshMaster/Src/easymesh_parse.cpp \
-    EasyMeshMaster/Src/easymesh_relax.cpp \
-    EasyMeshMaster/Src/easymesh_save.cpp \
-    EasyMeshMaster/Src/easymesh_smooth.cpp \
-    EasyMeshMaster/Src/easymesh_spacing.cpp \
-    EasyMeshMaster/Src/easymesh_swap_side.cpp \
-    EasyMeshMaster/Src/timer.cpp \
-    Src/Model/Element/myelement.cpp \
-    Src/PartWindow/PartWindowInputDialog/partinputdialog.cpp \
-    Src/MaterialInputDialog/materialinputdialog.cpp \
-    Src/PartChooseDialog/partchoosedialog.cpp \
-    Src/BoundaryWindow/boundarywindow.cpp \
-    Src/BoundaryConditionDialog/boundaryconditiondialog.cpp \
-    Src/LoadDialog/loaddialog.cpp \
-    Src/NewLoadDialog/newloaddialog.cpp \
-    Src/Manager/manager.cpp \
-    Src/JobDialog/jobdialog.cpp \
+    EasyMesh/Src/draw_eps.cpp \
+    EasyMesh/Src/easymesh.cpp \
+    EasyMesh/Src/easymesh_area.cpp \
+    EasyMesh/Src/easymesh_bowyer.cpp \
+    EasyMesh/Src/easymesh_circles.cpp \
+    EasyMesh/Src/easymesh_classify.cpp \
+    EasyMesh/Src/easymesh_compress.cpp \
+    EasyMesh/Src/easymesh_diamond.cpp \
+    EasyMesh/Src/easymesh_draw.cpp \
+    EasyMesh/Src/easymesh_erase.cpp \
+    EasyMesh/Src/easymesh_examples.cpp \
+    EasyMesh/Src/easymesh_help.cpp \
+    EasyMesh/Src/easymesh_in_elem.cpp \
+    EasyMesh/Src/easymesh_insert_node.cpp \
+    EasyMesh/Src/easymesh_load.cpp \
+    EasyMesh/Src/easymesh_materials.cpp \
+    EasyMesh/Src/easymesh_neighbours.cpp \
+    EasyMesh/Src/easymesh_new_node.cpp \
+    EasyMesh/Src/easymesh_parse.cpp \
+    EasyMesh/Src/easymesh_relax.cpp \
+    EasyMesh/Src/easymesh_save.cpp \
+    EasyMesh/Src/easymesh_smooth.cpp \
+    EasyMesh/Src/easymesh_spacing.cpp \
+    EasyMesh/Src/easymesh_swap_side.cpp \
+    EasyMesh/Src/timer.cpp \
+    Src/View/PartWindow/PartWindowInputDialog/partinputdialog.cpp \
+    Src/Dialog/MaterialInputDialog/materialinputdialog.cpp \
+    Src/Dialog/PartChooseDialog/partchoosedialog.cpp \
+    Src/View/BoundaryWindow/boundarywindow.cpp \
+    Src/Dialog/BoundaryConditionDialog/boundaryconditiondialog.cpp \
+    Src/Dialog/LoadDialog/loaddialog.cpp \
+    Src/Dialog/NewLoadDialog/newloaddialog.cpp \
+    Src/View/Manager/manager.cpp \
+    Src/Dialog/JobDialog/jobdialog.cpp \
     Src/Model/test_gravityload.cpp \
     Src/Model/BCType/bc.cpp \
     Src/Model/LoadType/load.cpp \
-    Src/DataVisualization/datavisualization.cpp
+    Src/View/DataVisualization/datavisualization.cpp
 
 HEADERS += \
-    Src/Model/Element/TriangularElement/triangularelementsixnode.h \
-    Src/Model/Element/TriangularElement/triangularelementthreenode.h \
+    Src/Model/Element/TriangularElement/tri3.h \
+    Src/Model/Element/TriangularElement/tri6.h \
+    Src/Model/Element/femelement.h \
     Src/Model/Part/DXFFilter/dxffilter.h \
     Src/Model/model.h \
-    Src/QWChartView/qwchartview.h \
+    Src/View/QWChartView/qwchartview.h \
     Src/mainwindow.h \
-    Src/Model/Math/LU.h \
-    Src/PartWindow/ModeData/modeldata.h \
-    Src/PartWindow/MeshParameter/meshparameter.h \
+    Src/Model/Math/Math.h \
+    Src/View/PartWindow/ModeData/modeldata.h \
+    Src/View/PartWindow/MeshParameter/meshparameter.h \
     Src/Model/Material/material.h \
     Src/Model/Part/part.h \
-    Src/PartWindow/partwindow.h \
+    Src/View/PartWindow/partwindow.h \
     Src/Model/Part/DXFFilter/primitive.h \
     dxflib/src/dl_attributes.h \
     dxflib/src/dl_codes.h \
@@ -113,56 +113,55 @@ HEADERS += \
     dxflib/src/dl_global.h \
     dxflib/src/dl_writer.h \
     dxflib/src/dl_writer_ascii.h \
-    EasyMeshMaster/Src/chain.h \
-    EasyMeshMaster/Src/draw_eps.h \
-    EasyMeshMaster/Src/easymesh.h \
-    EasyMeshMaster/Src/easymesh_constants.h \
-    EasyMeshMaster/Src/element.h \
-    EasyMeshMaster/Src/node.h \
-    EasyMeshMaster/Src/options.h \
-    EasyMeshMaster/Src/precision.h \
-    EasyMeshMaster/Src/print.h \
-    EasyMeshMaster/Src/segment.h \
-    EasyMeshMaster/Src/side.h \
-    EasyMeshMaster/Src/timer.h \
-    Src/Model/Element/myelement.h \
-    Src/PartWindow/PartWindowInputDialog/partinputdialog.h \
-    Src/MaterialInputDialog/materialinputdialog.h \
-    Src/PartChooseDialog/partchoosedialog.h \
-    Src/BoundaryWindow/boundarywindow.h \
-    Src/BoundaryConditionDialog/boundaryconditiondialog.h \
-    Src/LoadDialog/loaddialog.h \
-    Src/NewLoadDialog/newloaddialog.h \
-    Src/Manager/manager.h \
-    Src/JobDialog/jobdialog.h \
+    EasyMesh/Src/chain.h \
+    EasyMesh/Src/draw_eps.h \
+    EasyMesh/Src/easymesh.h \
+    EasyMesh/Src/easymesh_constants.h \
+    EasyMesh/Src/element.h \
+    EasyMesh/Src/node.h \
+    EasyMesh/Src/options.h \
+    EasyMesh/Src/precision.h \
+    EasyMesh/Src/print.h \
+    EasyMesh/Src/segment.h \
+    EasyMesh/Src/side.h \
+    EasyMesh/Src/timer.h \
+    Src/View/PartWindow/PartWindowInputDialog/partinputdialog.h \
+    Src/Dialog/MaterialInputDialog/materialinputdialog.h \
+    Src/Dialog/PartChooseDialog/partchoosedialog.h \
+    Src/View/BoundaryWindow/boundarywindow.h \
+    Src/Dialog/BoundaryConditionDialog/boundaryconditiondialog.h \
+    Src/Dialog/LoadDialog/loaddialog.h \
+    Src/Dialog/NewLoadDialog/newloaddialog.h \
+    Src/View/Manager/manager.h \
+    Src/Dialog/JobDialog/jobdialog.h \
     Src/Model/test_model.h \
     Src/Model/BCType/bc.h \
     Src/Model/LoadType/load.h \
     stable.h \
-    Src/DataVisualization/datavisualization.h
+    Src/View/DataVisualization/datavisualization.h
 
 FORMS += \
     Src/mainwindow.ui \
-    Src/PartWindow/ModeData/modeldata.ui \
-    Src/PartWindow/MeshParameter/meshparameter.ui \
-    Src/PartWindow/partwindow.ui \
-    Src/PartWindow/PartWindowInputDialog/partinputdialog.ui \
-    Src/MaterialInputDialog/materialinputdialog.ui \
-    Src/PartChooseDialog/partchoosedialog.ui \
-    Src/BoundaryWindow/boundarywindow.ui \
-    Src/BoundaryConditionDialog/boundaryconditiondialog.ui \
-    Src/LoadDialog/loaddialog.ui \
-    Src/NewLoadDialog/newloaddialog.ui \
-    Src/Manager/manager.ui \
-    Src/JobDialog/jobdialog.ui \
-    Src/DataVisualization/datavisualization.ui
+    Src/View/PartWindow/ModeData/modeldata.ui \
+    Src/View/PartWindow/MeshParameter/meshparameter.ui \
+    Src/View/PartWindow/partwindow.ui \
+    Src/View/PartWindow/PartWindowInputDialog/partinputdialog.ui \
+    Src/Dialog/MaterialInputDialog/materialinputdialog.ui \
+    Src/Dialog/PartChooseDialog/partchoosedialog.ui \
+    Src/View/BoundaryWindow/boundarywindow.ui \
+    Src/Dialog/BoundaryConditionDialog/boundaryconditiondialog.ui \
+    Src/Dialog/LoadDialog/loaddialog.ui \
+    Src/Dialog/NewLoadDialog/newloaddialog.ui \
+    Src/View/Manager/manager.ui \
+    Src/Dialog/JobDialog/jobdialog.ui \
+    Src/View/DataVisualization/datavisualization.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-ININCLUDEPATH += $$PWDCLUDEPATH += $$PWD/EasyMeshMaster/Src/
+ININCLUDEPATH += $$PWDCLUDEPATH += $$PWD/EasyMesh/Src/
 INCLUDEPATH += $$PWD/dxflib/src/
 #INCLUDEPATH += $$PWD/Eigen3/
 
@@ -176,20 +175,20 @@ INCLUDEPATH += $$PWD/Src/Model/Element/TriangularElement/
 INCLUDEPATH += $$PWD/Src/Model/Examples/
 INCLUDEPATH += $$PWD/Src/Model/BCType/
 INCLUDEPATH += $$PWD/Src/Model/LoadType/
-INCLUDEPATH += $$PWD/Src/QWChartView/
-INCLUDEPATH += $$PWD/Src/PartWindow/
-INCLUDEPATH += $$PWD/Src/PartWindow/ModeData/
-INCLUDEPATH += $$PWD/Src/PartWindow/MeshParameter/
-INCLUDEPATH += $$PWD/Src/PartWindow/PartWindowInputDialog/
-INCLUDEPATH += $$PWD/Src/MaterialInputDialog/
-INCLUDEPATH += $$PWD/Src/PartChooseDialog/
-INCLUDEPATH += $$PWD/Src/BoundaryWindow/
-INCLUDEPATH += $$PWD/Src/BoundaryConditionDialog/
-INCLUDEPATH += $$PWD/Src/LoadDialog/
-INCLUDEPATH += $$PWD/Src/NewLoadDialog/
-INCLUDEPATH += $$PWD/Src/Manager/
-INCLUDEPATH += $$PWD/Src/JobDialog/
-INCLUDEPATH += $$PWD/Src/DataVisualization/
+INCLUDEPATH += $$PWD/Src/View/QWChartView/
+INCLUDEPATH += $$PWD/Src/View/PartWindow/
+INCLUDEPATH += $$PWD/Src/View/PartWindow/ModeData/
+INCLUDEPATH += $$PWD/Src/View/PartWindow/MeshParameter/
+INCLUDEPATH += $$PWD/Src/View/PartWindow/PartWindowInputDialog/
+INCLUDEPATH += $$PWD/Src/Dialog/MaterialInputDialog/
+INCLUDEPATH += $$PWD/Src/Dialog/PartChooseDialog/
+INCLUDEPATH += $$PWD/Src/View/BoundaryWindow/
+INCLUDEPATH += $$PWD/Src/Dialog/BoundaryConditionDialog/
+INCLUDEPATH += $$PWD/Src/Dialog/LoadDialog/
+INCLUDEPATH += $$PWD/Src/Dialog/NewLoadDialog/
+INCLUDEPATH += $$PWD/Src/View/Manager/
+INCLUDEPATH += $$PWD/Src/Dialog/JobDialog/
+INCLUDEPATH += $$PWD/Src/View/DataVisualization/
 
 RESOURCES += \
     icons.qrc
